@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import {Platform, Text, View, TextInput, Image, StyleSheet, ImageBackground, TouchableOpacity, StatusBar, ScrollView, TouchableNativeFeedback, TouchableHighlight} from 'react-native';
+import firebase from 'react-native-firebase';
+const advert = firebase.admob().interstitial('ca-app-pub-2457999726327943/4450394052')
 
-
+const Banner = firebase.admob.Banner;
+const AdRequest = firebase.admob.AdRequest;
+const request = new AdRequest();
+request.addKeyword('foobar');
 export default class Apply extends Component {
 
   constructor(props){
@@ -25,7 +30,24 @@ export default class Apply extends Component {
    goToPage = (val) => {
     this.props.navigation.navigate(val)
   }
+componentDidMount = ()  =>
+{
+  advert.loadAd(request.build());
+ 
 
+advert.on('onAdLoaded', () => {
+console.log('Advert ready to show.');
+});
+
+setTimeout(() => {
+if (advert.isLoaded()) {
+  console.log('working')
+  advert.show();
+} else {
+  console.log('error occured')
+}
+}, 1000);
+}
   signUp = () =>{
     this.setState(() => ({ cardheight:370}));
     if ( !service.validateEmail(this.state.email)) {

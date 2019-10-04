@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.vestigeproductslist">
+  package="com.atomyinfo">
 
     <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -12,7 +12,7 @@
       android:theme="@style/AppTheme">
       <meta-data
     android:name="com.google.android.gms.ads.APPLICATION_ID"
-    android:value="ca-app-pub-3372831736678620~2477547469"/>
+    android:value="ca-app-pub-2457999726327943~9777429273"/>
      <meta-data
                 android:name="com.facebook.sdk.ApplicationId"
                 android:value="@string/fb_app_id"/>

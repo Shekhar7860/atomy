@@ -6,8 +6,8 @@ const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
 import { LoginManager,   AccessToken } from 'react-native-fbsdk';
 import { InterstitialAdManager, NativeAdsManager,  BannerView, AdSettings  } from 'react-native-fbads';
-const advert2 = firebase.admob().rewarded('ca-app-pub-3550043356338169/5722030580')
-const advert = firebase.admob().interstitial('ca-app-pub-3550043356338169/2336678711')
+const advert2 = firebase.admob().rewarded('ca-app-pub-2457999726327943/6156914316')
+const advert = firebase.admob().interstitial('ca-app-pub-2457999726327943/1707367568')
 const request = new AdRequest();
 request.addKeyword('foobar');
 export default class Welcome extends Component {
@@ -21,27 +21,27 @@ export default class Welcome extends Component {
   }
   componentDidMount = () => {
   //  AdSettings.addTestDevice(AdSettings.currentDeviceHash);
-//     advert.loadAd(request.build());
-//     advert2.loadAd(request.build())
+    advert.loadAd(request.build());
+    advert2.loadAd(request.build())
 
-//     advert2.on('onAdLoaded', () => {
-//        console.log('Advert2 ready to show.')
-//     })
+    advert2.on('onAdLoaded', () => {
+       console.log('Advert2 ready to show.')
+    })
     
-//     advert2.show()
+    advert2.show()
 
-// advert.on('onAdLoaded', () => {
-//   console.log('Advert ready to show.');
-// });
+advert.on('onAdLoaded', () => {
+  console.log('Advert ready to show.');
+});
 
-// setTimeout(() => {
-//   if (advert.isLoaded()) {
-//     console.log('working')
-//     advert.show();
-//   } else {
-//     console.log('error occured')
-//   }
-// }, 1000);
+setTimeout(() => {
+  if (advert.isLoaded()) {
+    console.log('working')
+    advert.show();
+  } else {
+    console.log('error occured')
+  }
+}, 1000);
   }
   static navigationOptions = {
     title: "Welcome"
@@ -111,6 +111,7 @@ export default class Welcome extends Component {
             <TouchableHighlight style={styles.fullWidthButton} onPress={() => this.goToPage('Apply')}>
             <Text style={styles.fullWidthButtonText}>About company (कम्पनी के बारे में)</Text>
             </TouchableHighlight>
+            <Text style={styles.messageBoxBodyText2}>If you any query related to atomy, call me 9646407363 (यदि आप किसी भी परीक्षा से संबंधित हैं, तो मुझे 9646407363 पर कॉल करें)</Text>
             
             
           
@@ -121,7 +122,7 @@ export default class Welcome extends Component {
        <Banner
        style={{alignSelf:'center',marginLeft:20}}
     size={"SMALL_BANNER"}
-  unitId={"ca-app-pub-2457999726327943/9639537368"}
+  unitId={"ca-app-pub-2457999726327943/6959694240"}
   request={request.build()}
   onAdLoaded={() => {
     console.log('Advert loaded');

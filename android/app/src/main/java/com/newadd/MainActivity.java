@@ -1,4 +1,4 @@
-package com.vestigeproductslist;
+package com.atomyinfo;
 
 import com.facebook.react.ReactActivity;
 import org.devio.rn.splashscreen.SplashScreen;

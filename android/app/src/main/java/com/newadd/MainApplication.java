@@ -1,4 +1,4 @@
-package com.vestigeproductslist;
+package com.atomyinfo;
 
 import android.app.Application;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;

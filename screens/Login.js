@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {Platform, Text, View, TextInput, Image,KeyboardAvoidingView,  ImageBackground, TouchableHighlight, TouchableOpacity, StatusBar, ScrollView, TouchableNativeFeedback, StyleSheet} from 'react-native';
 import firebase from 'react-native-firebase';
-const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 0
-import Icon from 'react-native-vector-icons/FontAwesome';
 const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
+const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 0
+import Icon from 'react-native-vector-icons/FontAwesome';
+const advert = firebase.admob().interstitial('ca-app-pub-2457999726327943/5035404332')
 const request = new AdRequest();
 request.addKeyword('foobar');
+
 export default class Login extends Component {
     constructor(props){
         super(props);
@@ -18,7 +20,21 @@ export default class Login extends Component {
        
      }
   componentDidMount = () => {
-  
+    advert.loadAd(request.build());
+   
+
+advert.on('onAdLoaded', () => {
+  console.log('Advert ready to show.');
+});
+
+setTimeout(() => {
+  if (advert.isLoaded()) {
+    console.log('working')
+    advert.show();
+  } else {
+    console.log('error occured')
+  }
+}, 1000);
   }
   static navigationOptions = {
     title: "Welcome"
@@ -112,13 +128,14 @@ export default class Login extends Component {
             <Text style={styles.fullWidthButtonText}>Submit</Text>
             </TouchableHighlight>
             <Text style={styles.messageBoxBodyText2}>If you have any query, you can call me +917626879728 (यदि आपके पास कोई प्रश्न है, तो आप मुझे +917626879728 पर कॉल कर सकते हैं)</Text>
+            <Text style={styles.messageBoxBodyText2}>If you want to join atomy, send adhaar card on 8837826904 or call 9646407363 (यदि आप एटॉमी में शामिल होना चाहते हैं, तो 8837826904 पर एडहेर कार्ड भेजें या 9646407363 पर कॉल करें)</Text>
                     </View>
                 </View>
                 <View style={styles.footer}>
        <Banner
        style={{alignSelf:'center',marginLeft:20}}
     size={"SMALL_BANNER"}
-  unitId={"ca-app-pub-2457999726327943/9719891436"}
+  unitId={"ca-app-pub-2457999726327943/8974649345"}
   request={request.build()}
   onAdLoaded={() => {
     console.log('Advert loaded');
