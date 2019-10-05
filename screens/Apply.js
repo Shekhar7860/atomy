@@ -117,11 +117,19 @@ if (advert.isLoaded()) {
                     <View style={styles.messageBox}>
                     <Text style={styles.messageBoxBodyText}>Atomy, the company is working from last 50 years but it started as a network marketing in 2006. This korean company started working in U.S.A, Japan and now launching in India And China. The company has several labourates and huge number of patents. They incorporates wseveral scientists. If we talk about products, they cover health, skincare, personal care, clothes and laundry. The company is expected to launch 1 lakh products in 2020. If you want to earn upto 1 lakh per day in your future, join today. (एटॉमी, कंपनी पिछले 50 वर्षों से काम कर रही है, लेकिन 2006 में नेटवर्क मार्केटिंग के रूप में शुरू हुई। इस कोरियाई कंपनी ने U.S.A, जापान में काम करना शुरू किया और अब भारत और चीन में लॉन्च हो रही है। कंपनी के पास कई लैबोरेटरीज और भारी संख्या में पेटेंट हैं। वे छद्म वैज्ञानिकों को शामिल करते हैं। अगर हम उत्पादों के बारे में बात करते हैं, तो वे स्वास्थ्य, स्किनकेयर, व्यक्तिगत देखभाल, कपड़े और कपड़े धोने को कवर करते हैं। कंपनी को 2020 में 1 लाख उत्पाद लॉन्च करने की उम्मीद है।अगर आप अपने भविष्य में प्रति दिन 1 लाख तक कमाना चाहते हैं, तो आज ही ज्वाइन करें।)</Text>
                       <TouchableHighlight style={styles.fullWidthButton} onPress={() => this.goToPage('Login')}>
-            <Text style={styles.fullWidthButtonText}>Join Now (अब सम्मिलित हों)</Text>
+            <Text style={styles.fullWidthButtonText}>Join Now (अभी सम्मिलित हों)</Text>
             </TouchableHighlight>
                     </View>
 
                     </View>
+                    <Banner
+       style={{alignSelf:'center',marginLeft:20}}
+    size={"SMALL_BANNER"}
+  unitId={"ca-app-pub-2457999726327943/6959694240"}
+  request={request.build()}
+  onAdLoaded={() => {
+    console.log('Advert loaded');
+  }} />
                     </ScrollView>
 
       

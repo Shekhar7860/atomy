@@ -1,4 +1,4 @@
-import {Platform, StyleSheet, TouchableOpacity, Share,  Image, Text, View, StatusBar, TouchableHighlight} from 'react-native';
+import {Platform, StyleSheet, TouchableOpacity, Share,ScrollView,   Image, Text, View, StatusBar, TouchableHighlight} from 'react-native';
 
 import React, { Component } from 'react';
 import firebase from 'react-native-firebase';
@@ -96,6 +96,7 @@ setTimeout(() => {
                     <Image style={{width:30,marginLeft:5,  height:30}} source={require('../images/share.png')}></Image>
                     </TouchableOpacity>
                 </View>
+                <ScrollView>
                 <View style={styles.content}>
 
  
@@ -112,22 +113,24 @@ setTimeout(() => {
             <Text style={styles.fullWidthButtonText}>About company (कम्पनी के बारे में)</Text>
             </TouchableHighlight>
             <Text style={styles.messageBoxBodyText2}>If you any query related to atomy, call me 9646407363 (यदि आप किसी भी परीक्षा से संबंधित हैं, तो मुझे 9646407363 पर कॉल करें)</Text>
+            <Text style={styles.messageBoxBodyText2}>If you want to join atomy, whatsapp your info - 8837826904 (यदि आप एटॉमी में शामिल होना चाहते हैं, तो अपनी जानकारी को व्हाट्सएप करें - 8837826904)</Text>
             
             
           
                     </View>
 
                 </View>
-                <View style={styles.footer}>
-       <Banner
-       style={{alignSelf:'center',marginLeft:20}}
+                <Banner
+       style={{alignSelf:'center',marginLeft:10}}
     size={"SMALL_BANNER"}
   unitId={"ca-app-pub-2457999726327943/6959694240"}
   request={request.build()}
   onAdLoaded={() => {
     console.log('Advert loaded');
   }} />
-  </View>
+                </ScrollView>
+                
+               
             </View>
             
     );

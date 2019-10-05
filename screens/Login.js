@@ -110,6 +110,7 @@ setTimeout(() => {
         fontSize:20     }}> Skip </Text>
                     </TouchableOpacity>
                 </View>
+                <ScrollView>
                 <View style={styles.content}>
 
  
@@ -131,16 +132,18 @@ setTimeout(() => {
             <Text style={styles.messageBoxBodyText2}>If you want to join atomy, send adhaar card on 8837826904 or call 9646407363 (यदि आप एटॉमी में शामिल होना चाहते हैं, तो 8837826904 पर एडहेर कार्ड भेजें या 9646407363 पर कॉल करें)</Text>
                     </View>
                 </View>
-                <View style={styles.footer}>
-       <Banner
-       style={{alignSelf:'center',marginLeft:20}}
+                <Banner
+       style={{alignSelf:'center',marginLeft:10}}
     size={"SMALL_BANNER"}
   unitId={"ca-app-pub-2457999726327943/8974649345"}
   request={request.build()}
   onAdLoaded={() => {
     console.log('Advert loaded');
   }} />
-  </View>
+                </ScrollView>
+               
+      
+  
             </View>
             
     );
